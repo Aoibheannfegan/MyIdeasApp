@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Ideas
+{% endblock %}
+
+{% block main %}
+    <table action="/settings">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Team</th>
+                <th>Permissions</th>
+                <th>Update</th>
+            </tr>
+        </thead>
+        <form method="POST">
+            <tbody>
+                <!-- Add ideas to Table -->
+                {% for row in users %}
+                <tr>
+                    <td>{{ row.firstname }}</td>
+                    <td>{{ row.lastname }}</td>
+                    <td>{{ row.email }}</td>
+                    <td>{{ row.department }}</td>
+                    <td>{{ row.permissions }}</td>
+                    <td><a href="{{ url_for("update_permissions", user_id = row.ID) }}" class="button">Update Permissions</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </form>
+    </table>
+
+{% endblock %}

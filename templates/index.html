@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Kandan
+{% endblock %}
+
+{% block main %}
+<head>
+    <title>Kanban Board</title>
+</head>
+<body>
+    <section>
+        <div class="container mb-3">
+            <div class="kanban-board">
+                <div class="kanban-block" id="submit">
+                    <strong>Submitted</strong>
+                    {% for idea in ideas %}
+                        <div class="task" id="idea">
+                            <div><a href="{{ url_for("idea_page", idea_id = idea.idea_id) }}" class="idea"><span><strong>{{ idea.title }}</strong></span></a></div>
+                            <div class="description"><span>{{ idea.notes }}</span></div>
+                            <div class="description"><span><strong>Upvotes: </strong>{{ idea.upvotes }}</span></div>
+                            <div class="description"><span><strong>Downvotes: </strong>{{ idea.downvotes }}</span></div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="kanban-block" id="review">
+                    <strong>In Review</strong>
+                    {% for review in inReview %}
+                        <div class="task" id="idea">
+                            <div><a href="{{ url_for("idea_page", idea_id = review.idea_id) }}" class="idea"><span><strong>{{ review.title }}</strong></span></a></div>
+                            <div class="description"><span>{{ review.notes }}</span></div>
+                            <div class="description"><span><strong>Upvotes: </strong>{{ review.upvotes }}</span></div>
+                            <div class="description"><span><strong>Downvotes: </strong>{{ review.downvotes }}</span></div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="kanban-block" id="accept">
+                    <strong>Accepted</strong>
+                    {% for accept in accepted %}
+                        <div class="task" id="idea">
+                            <div><a href="{{ url_for("idea_page", idea_id = accept.idea_id) }}" class="idea"><span><strong>{{ accept.title }}</strong></span></a></div>
+                            <div class="description"><span>{{ accept.notes }}</span></div>
+                            <div class="description"><span><strong>Upvotes: </strong>{{ accept.upvotes }}</span></div>
+                            <div class="description"><span><strong>Downvotes: </strong>{{ accept.downvotes }}</span></div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="kanban-block" id="reject">
+                    <strong>Rejected</strong>
+                    {% for reject in rejected %}
+                        <div class="task" id="idea">
+                            <div><a href="{{ url_for("idea_page", idea_id = reject.idea_id) }}" class="idea"><span><strong>{{ reject.title }}</strong></span></a></div>
+                            <div class="description"><span>{{ reject.notes }}</span></div>
+                            <div class="description"><span><strong>Upvotes: </strong>{{ reject.upvotes }}</span></div>
+                            <div class="description"><span><strong>Downvotes: </strong>{{ reject.downvotes }}</span></div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div>
+            <a href ="/add" class="button">Submit an Idea</a>
+         </div>
+    </section>
+</body>
+
+{% endblock %}

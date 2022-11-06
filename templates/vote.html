@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Ideas
+{% endblock %}
+
+{% block main %}
+
+    <table>
+        <thead>
+            <tr>
+                <th>Idea</th>
+                <th>Description</th>
+                <th>Upvotes</th>
+                <th>Downvotes</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <!-- Add ideas to Table -->
+            {% for idea in ideas %}
+                <tr>
+                    <td><a href="{{ url_for("idea_page", idea_id = idea.idea_id) }}" class="vote">{{ idea.title }}</a></td>
+                    <td name="descripton">{{ idea.notes }}</td>
+                    <td name="upvotes">{{ idea.upvotes }}</td>
+                    <td name="downvotes">{{ idea.downvotes }}</td>
+                    <td><a href="{{ url_for("upvote", idea_id = idea.idea_id) }}" class="button">Upvote<a></td>
+                    <td><a href="{{ url_for("downvote", idea_id = idea.idea_id) }}" class="button">Downvote<a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

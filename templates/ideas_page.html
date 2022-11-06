@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Ideas
+{% endblock %}
+
+{% block main %}
+<div class="mb-3">
+    <a href="/">Go Back</a>
+</div>
+
+<div class="board mb-3">
+    {% for idea in ideas %}
+        <div class="mb-4">
+            <div class="font-size: xx-large; mb-3"><span><strong>{{ idea.title }}</strong></span></div>
+            <div class="mb-3"><span>{{ idea.notes }}</span></div>
+            <div class="mb-3"><span><strong>Stage: </strong>{{ idea.stage }}</span></div>
+            <div class="mb-3"><span><strong>Upvotes: </strong>{{ idea.upvotes }}</span></div>
+            <div class="mb-3"><span><strong>Downvotes: </strong>{{ idea.downvotes }}</span></div>
+        </div>
+    {% endfor %}
+</div>
+
+<section class="comments">
+    <form action="/idea_page/{{idea_id}}" method="post">
+        <div class="mb-3">
+            <textarea class="form-control" id="comment" name="comment" placeholder="Add comment" rows="2"></textarea>
+        </div>
+        <div class="mb-3">
+            <button class="button" type="submit">Add Comment</button>
+        </div>
+    </form>
+    {% for comment in comments %}
+        <div class="comment">
+            <div class="mb-3" style="font-size:small"><p><strong>{{ comment.username }}</strong></p></div>
+            <div class="mb-3" style="font-size: x-small"><p>{{ comment.time }}</p></div>
+            <div class="mb-3"><p>{{ comment.comment }}</p></div>
+        </div>
+    {% endfor %}
+</section>
+{% endblock %}

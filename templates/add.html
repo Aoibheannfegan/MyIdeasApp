@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Submit Idea
+{% endblock %}
+
+{% block main %}
+    <form action="/add" method="post" class="form">
+        <h1 class="mb-4" style="color:#ffecb8;">Submit Idea</h1>
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="title" name="title" placeholder="Title" type="text">
+        </div>
+        <div class="mb-3">
+            <textarea class="form-control" id="notes" name="notes" placeholder="Why is this important?" rows="3"></textarea>
+        </div>
+        <div class="mb-3">
+            <button type="submit">Submit Idea</button>
+        </div>
+    </form>
+{% endblock %}

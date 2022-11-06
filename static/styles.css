@@ -1,0 +1,169 @@
+/* Size for brand */
+nav {
+    background-color: #ffecb8;
+}
+
+nav .navbar-brand
+{
+    font-size: xx-large;
+}
+
+/* Colors for brand */
+nav .navbar-brand .blue
+{
+    color: #90d2d8;
+}
+
+.form {
+    background-color: #b7ded2;
+    margin-bottom: 1rem;
+    margin: auto;
+    width: 75%;
+    padding: 0.75rem;
+}
+
+table {
+    background-color: #90d2d8;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+table th {
+    padding: 0.75rem;
+    vertical-align: middle;
+    border: 1px solid white;
+    background-color: #90d2d8;
+}
+
+table td {
+    padding: 0.75rem;
+    vertical-align: middle;
+    border: 1px solid white;
+    background-color: #b7ded2;
+}
+
+.board {
+    background-color: #b7ded2;
+    padding: 0.6rem;
+    margin: auto;
+    border: 0.25rem solid black
+}
+
+.container {
+    width: 70%;
+    min-width: 50%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.kanban-board {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: sans-serif;
+}
+
+.kanban-block {
+    padding: 0.6rem;
+    width: 25%;
+    min-width: 14rem;
+    min-height: 4.5rem;
+    border-radius: 0rem;
+}
+
+#submit {
+    background-color: #ffecb8;
+}
+
+#review {
+    background-color: #f7c297;
+}
+
+#accept {
+    background-color: #b7ded2;
+}
+
+#reject {
+    background-color: #f6a6b2;
+}
+
+.task {
+    background-color: white;
+    margin: 0.2rem 0rem 0.2rem 0rem;
+    border: 0.1rem solid black;
+    border-radius: 0.2rem;
+    padding: 0.5rem 0.2rem 0.5rem 0.2rem;
+}
+
+.task:hover {
+    background-color: black;
+    color: white;
+}
+
+a:hover {
+    color: white;
+    font-weight: bold;
+  }
+
+.button {
+    text-decoration: none;
+    background-color: #90d2d8;
+    color: white;
+    padding: 6px 8px 6px 8px;
+    border: 0.2rem #90d2d8;
+}
+
+.button:hover {
+    color: white;
+    font-weight: bold;
+  }
+
+button {
+    text-decoration: none;
+    background-color: #90d2d8;
+    color: white;
+    padding: 6px 8px 6px 8px;
+    border: 0.2rem #90d2d8;
+}
+
+.description {
+    font-size: small;
+}
+
+.idea {
+    text-decoration: none;
+    background-color: none;
+    color: #90d2d8;
+    padding: 6px 8px 6px 8px;
+    border: 0.2rem #90d2d8;
+}
+
+.department {
+    text-decoration: none;
+    background-color: none;
+    color: black;
+    padding: 6px 8px 6px 8px;
+    border: 0.06rem solid #b1c4d2;
+}
+
+.vote {
+    text-decoration: none;
+    background-color: none;
+    color: black;
+    padding: 6px 8px 6px 8px;
+    border: 0.2rem #90d2d8;
+}
+
+.comments {
+    background-color: #ffecb8;
+    width: 100%;
+    padding: 0.75rem;
+}
+
+.comment {
+    background-color: white;
+    text-align: left;
+    padding: 0.5rem;
+    border: 0.05rem solid #b1c4d2;
+}

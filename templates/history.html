@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Ideas
+{% endblock %}
+
+{% block main %}
+<h1 class="mb-4" style="color:#f6a6b2;">History</h1>
+    <table action="/history">
+         <thead>
+            <tr>
+                <th>Idea</th>
+                <th>Action</th>
+                <th>Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Add ideas to Table -->
+            {% for idea in ideas %}
+                <tr>
+                    <td>{{ idea.title }}</td>
+                    <td>{{ idea.action }}</td>
+                    <td>{{ idea.time }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
